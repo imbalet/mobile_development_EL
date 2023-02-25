@@ -7,7 +7,7 @@ fun firstTask(){
     else
         println("Нет, число $i не содержит 7")
 }
-fun secoundTask(){
+fun secondTask(){
     println("Задание 2")
     println("Введите число")
     val i = readLine().toString()
@@ -53,12 +53,16 @@ fun fifthTask(){
     println("Задание 5")
     println("Введите возраст")
     val years = readLine().toString().toInt()
+    if (years < 18){
+        println("Внутренние нормативы компании запрещают рассылку среди граждан, которые не достигли 18 лет. ")
+        return
+    }
     println("Введите ФИО через пробел")
     val fio = readLine().toString()
     println("Введите пол в виде \"М\" или \"Ж\"")
     val sex = readLine().toString()
 
-    b = if (years % 10 == 5 || years % 10 == 10)
+    b = if (years % 10 == 5 || years % 10 == 0)
         "юбилеем."
     else
         "днем рождения."
@@ -67,8 +71,10 @@ fun fifthTask(){
     else
         "Уважаемая"
 
+    val x = 100 - years
+
     println("$beginning $fio поздравляю с $b")
-    println("Желаю ...")
+    println("Желаю не умереть в ближайшие $x лет! ")
 
 
 
@@ -77,7 +83,7 @@ fun fifthTask(){
 
 fun main(args: Array<String>) {
     firstTask()
-    secoundTask()
+    secondTask()
     thirdTask()
     fourthTask()
     fifthTask()
